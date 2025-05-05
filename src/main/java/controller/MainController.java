@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import manager.SceneState;
 import manager.TabSceneManager;
 import model.Anime;
 
@@ -21,8 +22,8 @@ public class MainController {
     @FXML private VBox searchNavItem;
     @FXML private VBox catalogNavItem;
 
-    @FXML private VBox bookmarkNavItem;
-
+    // на апдейт
+    @FXML private VBox favoriteNavItem;
     @FXML private VBox profileNavItem;
 
 
@@ -53,36 +54,49 @@ public class MainController {
 
 
         homeNavItem.setOnMouseClicked(e -> {
+            TabSceneManager.switchTab("home");
+            SceneState state = TabSceneManager.get();
+            if (state == null) TabSceneManager.create("/fxml/homeScene.fxml", null);
+            else {
+                // если итак активная
+                if (homeNavItem.getStyleClass().contains("active")) TabSceneManager.goToFirstAndShowAnimated();
+                else TabSceneManager.show();
+            }
+
+            // ресет вкладок
             unactiveAll();
             homeNavItem.getStyleClass().add("active");
-
-            TabSceneManager.switchTab("home");
-            if (TabSceneManager.get() == null) {
-                TabSceneManager.create("/fxml/homeScene.fxml", null);
-            }
-            TabSceneManager.show();
         });
 
         searchNavItem.setOnMouseClicked(e -> {
-            unactiveAll();
-            searchNavItem.getStyleClass().add("active");
 
             TabSceneManager.switchTab("search");
-            if (TabSceneManager.get() == null) {
-                TabSceneManager.create("/fxml/searchScene.fxml", null);
+            SceneState state = TabSceneManager.get();
+            if (state == null) TabSceneManager.create("/fxml/searchScene.fxml", null);
+            else {
+                // если итак активная
+                if (searchNavItem.getStyleClass().contains("active")) TabSceneManager.goToFirstAndShowAnimated();
+                else TabSceneManager.show();
             }
-            TabSceneManager.show();
+
+            // ресет вкладок
+            unactiveAll();
+            searchNavItem.getStyleClass().add("active");
         });
 
         catalogNavItem.setOnMouseClicked(e -> {
+            TabSceneManager.switchTab("catalog");
+            SceneState state = TabSceneManager.get();
+            if (state == null) TabSceneManager.create("/fxml/catalogScene.fxml", null);
+            else {
+                // если итак активная
+                if (catalogNavItem.getStyleClass().contains("active")) TabSceneManager.goToFirstAndShowAnimated();
+                else TabSceneManager.show();
+            }
+
+            // ресет вкладок
             unactiveAll();
             catalogNavItem.getStyleClass().add("active");
-
-            TabSceneManager.switchTab("catalog");
-            if (TabSceneManager.get() == null) {
-                TabSceneManager.create("/fxml/catalogScene.fxml", null);
-            }
-            TabSceneManager.show();
         });
     }
 

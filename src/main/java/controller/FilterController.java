@@ -120,49 +120,56 @@ public class FilterController {
 
 
 
+        // для выбора типов
+        for (AnimeType type: ApiService.filterParams.getTypes()) {
+            Label filterTypeItem = new Label(AnimeUtils.typeMap.get(type.getType_name()));
+            filterTypeItem.getStyleClass().add("filter-type-item");
+
+            filterTypeItem.setOnMouseClicked(event -> {
+                filterDebounce.stop();
+                if (filterTypeItem.getStyleClass().contains("active")) {
+                    filterTypeItem.getStyleClass().remove("active");
+                    selectedTypes.remove(type.getId());
+                } else {
+                    filterTypeItem.getStyleClass().add("active");
+                    selectedTypes.add(type.getId());
+                }
+                filterDebounce.playFromStart();
+            });
+
+            filterTypesContainer.getChildren().add(filterTypeItem);
+
+        }
+
+
+        // статусы
+        for (AnimeStatus status: ApiService.filterParams.getStatuses()) {
+            Label filterStatusItem = new Label(AnimeUtils.statusMap.get(status.getStatus_name()));
+            filterStatusItem.getStyleClass().add("filter-status-item");
+
+            filterStatusItem.setOnMouseClicked(event -> {
+                filterDebounce.stop();
+                if (filterStatusItem.getStyleClass().contains("active")) {
+                    filterStatusItem.getStyleClass().remove("active");
+                    selectedStatuses.remove(status.getId());
+                } else {
+                    filterStatusItem.getStyleClass().add("active");
+                    selectedStatuses.add(status.getId());
+                }
+                filterDebounce.playFromStart();
+            });
+
+            filterStatusesContainer.getChildren().add(filterStatusItem);
+        }
+
+        filterDebounce.setOnFinished( e -> Platform.runLater(() -> {
+            container.getChildren().clear();
+            filterContentScroll.setVvalue(0);
+            fetchFiltered();
+        }));
+
+
         Platform.runLater(() -> {
-            // для выбора типов
-            for (AnimeType type: ApiService.filterParams.getTypes()) {
-                Label filterTypeItem = new Label(AnimeUtils.typeMap.get(type.getType_name()));
-                filterTypeItem.getStyleClass().add("filter-type-item");
-
-                filterTypeItem.setOnMouseClicked(event -> {
-                    filterDebounce.stop();
-                    if (filterTypeItem.getStyleClass().contains("active")) {
-                        filterTypeItem.getStyleClass().remove("active");
-                        selectedTypes.remove(type.getId());
-                    } else {
-                        filterTypeItem.getStyleClass().add("active");
-                        selectedTypes.add(type.getId());
-                    }
-                    filterDebounce.playFromStart();
-                });
-
-                filterTypesContainer.getChildren().add(filterTypeItem);
-
-            }
-
-
-            // статусы
-            for (AnimeStatus status: ApiService.filterParams.getStatuses()) {
-                Label filterStatusItem = new Label(AnimeUtils.statusMap.get(status.getStatus_name()));
-                filterStatusItem.getStyleClass().add("filter-status-item");
-
-                filterStatusItem.setOnMouseClicked(event -> {
-                    filterDebounce.stop();
-                    if (filterStatusItem.getStyleClass().contains("active")) {
-                        filterStatusItem.getStyleClass().remove("active");
-                        selectedStatuses.remove(status.getId());
-                    } else {
-                        filterStatusItem.getStyleClass().add("active");
-                        selectedStatuses.add(status.getId());
-                    }
-                    filterDebounce.playFromStart();
-                });
-
-                filterStatusesContainer.getChildren().add(filterStatusItem);
-            }
-
             // жанры
             for (Genre genre: ApiService.filterParams.getGenres()) {
                 CheckBox checkBox = new CheckBox(genre.getGenre_name());
@@ -214,14 +221,6 @@ public class FilterController {
                 studioDropdownWrapper.setVisible(!studioDropdownWrapper.isVisible());
                 studioDropdownWrapper.setManaged(studioDropdownWrapper.isVisible());
             });
-
-
-            filterDebounce.setOnFinished( e -> Platform.runLater(() -> {
-                container.getChildren().clear();
-                filterContentScroll.setVvalue(0);
-                fetchFiltered();
-            }));
-
         });
 
 

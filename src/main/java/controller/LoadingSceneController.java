@@ -13,9 +13,12 @@ import service.ApiService;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import service.DbService;
 
 public class LoadingSceneController {
     private final ApiService apiService = ApiService.getInstance();
+    private final DbService dbService = DbService.getInstance();
+
     @FXML private Label statusLabel;
     @FXML private ImageView logoImage;
 

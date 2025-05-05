@@ -130,6 +130,22 @@ public class TabSceneManager {
     }
 
 
+    public static void goToFirstAndShowAnimated() {
+        Deque<SceneState> history = tabHistories.get(currentTab);
+        if (history == null || history.size() < 2) return;
+
+        SceneState first = history.getLast();
+        SceneState last = history.peek();
+
+        if (first == null || last == null || first == last) return;
+        history.clear();
+        history.push(first);
+        history.push(last);
+
+        goBackAndShowAnimated();
+    }
+
+
 }
 
 

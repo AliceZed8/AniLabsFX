@@ -1,0 +1,24 @@
+
+.search-header {
+    -fx-background-color: #1E1E1Eee;
+    -fx-padding: 5;
+}
+
+.search-wrapper {
+    -fx-background-color: #2A2A2A;
+    -fx-background-radius: 16;
+    -fx-padding: 0 15;
+}
+
+
+.search-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #999;
+    -fx-background-radius: 16;
+    -fx-border-radius: 6;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+}
+
+

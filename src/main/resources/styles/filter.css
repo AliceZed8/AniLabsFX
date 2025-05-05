@@ -1,0 +1,167 @@
+.filter-box {
+    -fx-padding: 20;
+    -fx-background-color: #1f1f1f; /* тёмный фон */
+    -fx-background-radius: 10;
+}
+
+.filter-title {
+    -fx-padding: 20;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+
+.filter-section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.filter-section-description {
+    -fx-text-fill: #888888;
+}
+
+.filter-year-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.filter-type-item, .filter-status-item {
+    -fx-background-color: #444;
+    -fx-text-fill: white;
+    -fx-padding: 6 12;
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+    -fx-alignment: center;
+}
+
+.filter-type-item:selected, .filter-type-item.active,
+.filter-status-item:selected, .filter-status-item.active {
+    -fx-background-color: #9b59b6;
+}
+
+
+
+
+
+
+/* Стиль для кнопки и контейнера, чтобы текст внутри выглядел как плейсхолдер */
+.placeholder-text {
+    -fx-text-fill: gray;
+    -fx-padding: 14;
+}
+
+
+/* Контейнер для отображения выбранных жанров */
+.selected-genres-container {
+    -fx-background-color: #333;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+    -fx-spacing: 5;
+    -fx-wrap-text: true;
+}
+
+
+.filter-tag {
+    -fx-background-color: #9b59b6;
+    -fx-background-radius: 12;
+    -fx-padding: 4 8;
+    -fx-spacing: 5;
+    -fx-alignment: center;
+}
+
+.filter-tag Label {
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+}
+
+.filter-tag Button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 12;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+
+
+
+
+.dropdown-content {
+    -fx-background-color: #2b2b2b;
+    -fx-padding: 10;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+}
+
+.check-box {
+    -fx-text-fill: white;
+    -fx-padding: 6 8;
+    -fx-font-size: 16;
+}
+
+.check-box .box {
+    -fx-background-color: transparent;
+    -fx-border-color: #888;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-pref-width: 18;
+    -fx-pref-height: 18;
+    -fx-alignment: center;
+    -fx-padding: 2;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #9b59b6;
+    -fx-border-color: #9b59b6;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:hover .box {
+    -fx-border-color: #b892d0;
+}
+
+
+.filter-back-button {
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+}
+
+.filter-back-button:hover {
+    -fx-background-color: #9b59b6;
+}
+
+.hide-filter-button {
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-padding: 5 15;
+    -fx-translate-x: -10;
+    -fx-translate-y: 10;
+}
+
+.hide-filter-button:hover {
+    -fx-background-color: #9b59b6;
+}
+
+.show-filter-button {
+    -fx-background-color: #444444;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+    -fx-translate-x: 10;
+    -fx-translate-y: 10;
+}
+
+.show-filter-button:hover {
+    -fx-background-color: #9b59b6;
+}
+
+

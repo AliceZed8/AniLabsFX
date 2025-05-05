@@ -1,0 +1,141 @@
+
+.player-top-box {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-padding: 5 10;
+}
+
+.frame-view {
+    -fx-background-color: black;
+}
+
+
+.anime-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.episode-info {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cccccc;
+}
+
+
+/* Комбо бокс с качествами */
+.quality-combo-box {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: #333333aa;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 0 10;
+}
+
+.quality-combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-padding: 0;
+}
+
+.quality-combo-box .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+.quality-combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+
+}
+
+.quality-combo-box .list-view {
+    -fx-background-color: #444444;
+    -fx-text-fill: white;
+}
+
+.player-bottom-box {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-padding: 5 10;
+}
+
+.play-pause-button, .toogle-fullscreen-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+.play-pause-button:hover, .toogle-fullscreen-button:hover {
+    -fx-background-color: #444444;
+    -fx-background-radius: 32;
+    -fx-cursor: hand;
+}
+
+
+/* Громкость */
+.volume-box {
+    -fx-translate-y: -90;
+}
+
+
+.volume-slider {
+    -fx-background-color: rgba(0, 0, 0, 0.5);
+    -fx-background-radius: 8;
+    -fx-padding: 5;
+}
+
+.volume-slider .track {
+    -fx-background-color: #aaaaaa;
+    -fx-background-radius: 2px;
+    -fx-pref-width: 2px;
+}
+
+.volume-slider .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+
+
+/* ползунок времени */
+.time-label {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+.time-slider {
+    -fx-background-color: transparent;
+}
+
+.time-slider .track {
+    -fx-background-color: #aaaaaa;
+    -fx-background-radius: 2px;
+    -fx-pref-height: 2px;
+}
+
+.time-slider .thumb {
+    -fx-background-color: white; /* Цвет "ползунка" */
+    -fx-background-radius: 50%;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+
+.time-slider .filled-track {
+    -fx-background-color: #8e44ad; /* Фиолетовая заполненная часть */
+    -fx-background-radius: 2px;
+}
+
+
+/* Кнопка назад */
+.player-back-button {
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+    -fx-padding: 8;
+}
+
+.player-back-button:hover {
+    -fx-background-color: #9b59b6;
+}
+
+

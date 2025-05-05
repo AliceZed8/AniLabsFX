@@ -1,0 +1,23 @@
+.schedule-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+
+}
+
+
+.schedule-back-button {
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+}
+
+.schedule-back-button:hover {
+    -fx-background-color: #9b59b6;
+}
+
+.section-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}

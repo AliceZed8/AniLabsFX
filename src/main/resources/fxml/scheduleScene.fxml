@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ScheduleController"
+            stylesheets="@/styles/schedule.css"
+>
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <HBox onMouseClicked="#goBack" styleClass="schedule-back-button" maxWidth="32" maxHeight="32">
+                <FontIcon iconLiteral="fas-arrow-left" iconSize="20" iconColor="white"/>
+            </HBox>
+            <Label text="Расписание" styleClass="schedule-title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane styleClass="schedule-scroll" fitToWidth="true" hbarPolicy="NEVER">
+            <VBox spacing="20">
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Понедельник" styleClass="section-title" />
+                    <FlowPane fx:id="mondayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Вторник" styleClass="section-title" />
+                    <FlowPane fx:id="tuesdayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Среда" styleClass="section-title" />
+                    <FlowPane fx:id="wednesdayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Четверг" styleClass="section-title" />
+                    <FlowPane fx:id="thursdayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Пятница" styleClass="section-title" />
+                    <FlowPane fx:id="fridayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Суббота" styleClass="section-title" />
+                    <FlowPane fx:id="saturdayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+                <VBox spacing="10" alignment="CENTER">
+                    <Label text="Воскресенье" styleClass="section-title" />
+                    <FlowPane fx:id="sundayContainer" styleClass="anime-flow-pane"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

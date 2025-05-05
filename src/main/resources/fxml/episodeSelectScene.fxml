@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.EpisodeSelectController"
+            stylesheets="@/styles/episodeSelect.css"
+            >
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-box">
+            <HBox onMouseClicked="#goBack" styleClass="epselect-back-button" maxWidth="32" maxHeight="32" alignment="CENTER">
+                <FontIcon iconLiteral="fas-arrow-left" iconSize="16" iconColor="white"/>
+            </HBox>
+            <Label fx:id="animeTitle" wrapText="true" styleClass="anime-title"/>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.3" >
+            <ScrollPane hbarPolicy="NEVER"
+                        vbarPolicy="NEVER"
+                        fitToWidth="true"
+                        minWidth="300"
+                        pannable="true"
+            >
+                <StackPane>
+                    <VBox fx:id="translatorContainer" styleClass="translator-container">
+                    </VBox>
+                    <ProgressIndicator fx:id="translationsLoadingIndicator"
+                                       maxWidth="30"
+                                       maxHeight="30"
+                                       visible="false"
+                                       mouseTransparent="true"
+                                       StackPane.alignment="CENTER"
+                                       style="-fx-progress-color: white;"/>
+                </StackPane>
+            </ScrollPane>
+
+            <ScrollPane hbarPolicy="NEVER"
+                        vbarPolicy="NEVER"
+                        fitToWidth="true"
+                        pannable="true"
+            >
+                <VBox fx:id="episodeContainer" styleClass="episode-container">
+
+                </VBox>
+            </ScrollPane>
+        </SplitPane>
+    </center>
+</BorderPane>

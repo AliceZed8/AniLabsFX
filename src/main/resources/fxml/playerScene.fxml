@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controller.PlayerController"
+           stylesheets="@/styles/player.css"
+           style="-fx-background-color: #000000;"
+           fx:id="mainPane"
+>
+    <ImageView fx:id="imageView" styleClass="frame-view"/>
+
+    <BorderPane fx:id="playerControlPane" visible="true">
+        <top>
+            <HBox fx:id="playerTopPanel" styleClass="player-top-box" alignment="CENTER">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <!-- arrow-left.svg -->
+                    <HBox onMouseClicked="#goBack" styleClass="player-back-button" maxWidth="32" maxHeight="32" alignment="CENTER">
+                        <FontIcon iconLiteral="fas-arrow-left" iconSize="20" iconColor="white"/>
+                    </HBox>
+                    <VBox>
+                        <Label fx:id="animeTitle" wrapText="true" maxHeight="40" styleClass="anime-title"/>
+                        <Label fx:id="episodeInfo" wrapText="true" styleClass="episode-info"/>
+                    </VBox>
+                </HBox>
+                <!-- РАЗДЕЛИТЕЛЬ -->
+                <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+
+                <HBox spacing="5" alignment="CENTER_RIGHT" minWidth="150">
+                    <ComboBox fx:id="speedSelector" promptText="1x"  styleClass="speed-combo-box" visible="false"/> <!-- пока что без ускорения -->
+                    <ComboBox fx:id="qualitySelector" promptText="360" styleClass="quality-combo-box"/>
+                </HBox>
+            </HBox>
+        </top>
+        <center>
+            <HBox fx:id="playerCenterPanel" alignment="CENTER" >
+                <StackPane>
+                    <ProgressIndicator fx:id="playerLoadingIndicator"
+                                       maxWidth="40"
+                                       maxHeight="40"
+                                       visible="false"
+                                       style="-fx-progress-color: purple;"
+                    />
+                    <HBox fx:id="centerControlBox" alignment="CENTER" spacing="50" >
+                        <HBox onMouseClicked="#prevEpisode" alignment="CENTER">
+                            <FontIcon iconLiteral="fas-backward" iconSize="30" iconColor="white"/>
+                        </HBox>
+                        <StackPane alignment="CENTER">
+                            <HBox fx:id="playSvg" alignment="CENTER" onMouseClicked="#play">
+                                <FontIcon iconLiteral="fas-play" iconSize="50" iconColor="white"/>
+                            </HBox>
+
+                            <HBox fx:id="pauseSvg" visible="false" alignment="CENTER" onMouseClicked="#pause">
+                                <FontIcon iconLiteral="fas-pause" iconSize="50" iconColor="white"/>
+                            </HBox>
+                        </StackPane>
+
+                        <HBox onMouseClicked="#nextEpisode" alignment="CENTER">
+                            <FontIcon iconLiteral="fas-forward" iconSize="30" iconColor="white"/>
+                        </HBox>
+                    </HBox>
+                </StackPane>
+            </HBox>
+        </center>
+        <bottom>
+            <HBox fx:id="playerBottomPanel" alignment="CENTER" spacing="10" styleClass="player-bottom-box" >
+                <StackPane>
+                    <!-- play.svg -->
+                    <HBox fx:id="playSvgMini" alignment="CENTER" onMouseClicked="#play">
+                        <FontIcon iconLiteral="fas-play" iconSize="20" iconColor="white"/>
+                    </HBox>
+
+                    <!-- pause.svg -->
+                    <HBox fx:id="pauseSvgMini" visible="false" alignment="CENTER" onMouseClicked="#pause">
+                        <FontIcon iconLiteral="fas-pause" iconSize="20" iconColor="white"/>
+                    </HBox>
+                </StackPane>
+
+                <!-- Current time label -->
+                <Label fx:id="currentTimeLabel" text="00:00" styleClass="time-label"/>
+
+                <!-- Time slider -->
+                <Slider fx:id="timeSlider" HBox.hgrow="ALWAYS" styleClass="time-slider"/>
+
+                <!-- Total time label -->
+                <Label fx:id="totalTimeLabel" text="00:00" styleClass="time-label"/>
+
+                <!-- Volume slide -->
+                <HBox>
+                    <StackPane fx:id="volumeButtonPane">
+                        <!-- volume.svg -->
+                        <HBox fx:id="volumeButton" alignment="CENTER">
+                            <FontIcon iconLiteral="fas-volume-up" iconSize="20" iconColor="white"/>
+                        </HBox>
+                        <!-- volume-mute.svg -->
+                        <HBox fx:id="volumeMuteButton" alignment="CENTER">
+                            <FontIcon iconLiteral="fas-volume-mute" iconSize="20" iconColor="white"/>
+                        </HBox>
+                    </StackPane>
+                    <VBox fx:id="volumeBox" visible="false" managed="false" styleClass="volume-box" >
+                        <Slider fx:id="volumeSlider" orientation="VERTICAL" min="0" max="1" value="1" styleClass="volume-slider" minHeight="80"/>
+                    </VBox>
+                </HBox>
+
+
+                <!-- Fullscreen Button -->
+                <HBox onMouseClicked="#toggleFullScreen">
+                    <FontIcon iconLiteral="fas-expand" iconSize="20" iconColor="white"/>
+                </HBox>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</StackPane>

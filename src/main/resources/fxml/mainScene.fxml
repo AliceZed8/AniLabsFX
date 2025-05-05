@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MainController"
+            stylesheets="@/styles/main.css"
+>
+    <!-- Центральный контент -->
+    <center>
+        <StackPane fx:id="contentPane"/>
+    </center>
+
+    <!-- Нижняя панель навигации -->
+    <bottom>
+        <HBox fx:id="navPanel" styleClass="bottom-nav" alignment="CENTER">
+            <VBox fx:id="homeNavItem" alignment="BOTTOM_CENTER" styleClass="nav-button">
+                <FontIcon iconLiteral="fas-home" iconSize="20" iconColor="white" styleClass="nav-icon"/>
+                <Label text="Главная" styleClass="nav-label"/>
+            </VBox>
+            <VBox fx:id="searchNavItem" alignment="BOTTOM_CENTER" styleClass="nav-button">
+                <FontIcon iconLiteral="fas-search" iconSize="20" iconColor="white" styleClass="nav-icon"/>
+                <Label text="Поиск" styleClass="nav-label"/>
+            </VBox>
+
+            <VBox fx:id="catalogNavItem" alignment="BOTTOM_CENTER" styleClass="nav-button">
+                <FontIcon iconLiteral="fas-book-open" iconSize="24" iconColor="white" styleClass="nav-icon"/>
+                <Label text="Каталог" styleClass="nav-label"/>
+            </VBox>
+            <VBox fx:id="favoriteNavItem" alignment="BOTTOM_CENTER" styleClass="nav-button">
+                <FontIcon iconLiteral="far-heart" iconSize="20" iconColor="white" styleClass="nav-icon"/>
+                <Label text="Избранное" styleClass="nav-label"/>
+            </VBox>
+            <VBox fx:id="profileNavItem" alignment="BOTTOM_CENTER" styleClass="nav-button">
+                <FontIcon iconLiteral="fas-user-circle" iconSize="20" iconColor="white" styleClass="nav-icon"/>
+                <Label text="Профиль" styleClass="nav-label"/>
+            </VBox>
+        </HBox>
+    </bottom>
+</BorderPane>

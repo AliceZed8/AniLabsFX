@@ -1,0 +1,26 @@
+
+
+
+.tab-header {
+   -fx-background-color: #1E1E1Eee;
+   -fx-spacing: 20;
+}
+
+.tab-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+.tab-indicator {
+    -fx-fill: #8a2be2;
+    -fx-arc-width: 6px;            /* Горизонтальный радиус скругления */
+    -fx-arc-height: 6px;
+}
+
+
+
+

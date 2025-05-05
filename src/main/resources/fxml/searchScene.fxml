@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controller.SearchController"
+           fx:id="mainPane"
+           stylesheets="@/styles/search.css"
+>
+    <StackPane>
+        <ScrollPane fx:id="searchScroll"
+                    styleClass="transparent-scroll"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="NEVER"
+                    fitToWidth="true"
+                    pannable="true"
+        >
+            <FlowPane fx:id="container" styleClass="anime-flow-pane" />
+        </ScrollPane>
+        <ProgressIndicator fx:id="loadingIndicator"
+                           visible="false"
+                           maxWidth="30"
+                           mouseTransparent="true"
+                           styleClass="loading-indicator"
+
+        />
+        <Button fx:id="scrollToTopButton" styleClass="scroll-to-top-btn"
+                text="↑"
+                visible="false"
+                StackPane.alignment="BOTTOM_RIGHT"
+        />
+    </StackPane>
+
+    <HBox fx:id="searchHeader"
+          alignment="CENTER"
+          StackPane.alignment="TOP_CENTER"
+          styleClass="search-header"
+          spacing="5"
+          prefHeight="40"
+          maxHeight="40"
+    >
+        <HBox styleClass="search-wrapper" alignment="CENTER">
+            <FontIcon iconLiteral="fas-search" iconSize="16" iconColor="#999"/>
+            <TextField fx:id="searchField"
+                       promptText="Поиск..."
+                       prefWidth="250"
+                       styleClass="search-field"
+            />
+        </HBox>
+
+    </HBox>
+
+</StackPane>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import elements.RangeSlider?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.FilterController"
+            stylesheets="@/styles/filter.css"
+            styleClass="root"
+>
+    <top>
+        <HBox onMouseClicked="#goBack" styleClass="filter-back-button" maxWidth="32" maxHeight="32">
+            <FontIcon iconLiteral="fas-arrow-left" iconSize="20" iconColor="white"/>
+        </HBox>
+    </top>
+    <left>
+        <ScrollPane fx:id="filterScroll" vbarPolicy="NEVER" hbarPolicy="NEVER">
+            <StackPane>
+                <VBox fx:id="filterBox" spacing="20" styleClass="filter-box">
+                    <VBox spacing="5" alignment="CENTER_LEFT">
+                        <Label text="Год выхода" styleClass="filter-section-title"/>
+                        <Label text="Укажите годы выхода аниме" styleClass="filter-section-description" />
+                        <HBox spacing="20" alignment="CENTER_LEFT">
+                            <Label fx:id="fromYearLabel" styleClass="filter-year-label" />
+                            <RangeSlider fx:id="yearSlider" prefHeight="32" prefWidth="300"/>
+                            <Label fx:id="toYearLabel" styleClass="filter-year-label" />
+                        </HBox>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Тип" styleClass="filter-section-title"/>
+                        <Label text="Укажите типы аниме" styleClass="filter-section-description" />
+                        <FlowPane fx:id="filterTypesContainer" hgap="7" vgap="7">
+
+                        </FlowPane>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Статус" styleClass="filter-section-title"/>
+                        <Label text="Укажите статусы аниме" styleClass="filter-section-description" />
+                        <FlowPane fx:id="filterStatusesContainer" hgap="7" vgap="7">
+
+                        </FlowPane>
+                    </VBox>
+
+                    <VBox spacing="5">
+                        <Label text="Жанры" styleClass="filter-section-title"/>
+                        <Label text="Выберите интересующие жанры" styleClass="filter-section-description"/>
+
+                        <StackPane fx:id="genreDropdownContainer" alignment="TOP_LEFT" maxWidth="500">
+                            <FlowPane fx:id="selectedGenresContainer" hgap="5" vgap="5" styleClass="selected-genres-container"/>
+                            <Label fx:id="genrePlaceholder" text="Выберите жанры" styleClass="placeholder-text"/>
+                        </StackPane>
+
+                        <!-- Выпадающий список -->
+                        <StackPane fx:id="genreDropdownWrapper" visible="false" managed="false" alignment="TOP_LEFT">
+                            <ScrollPane fx:id="genreScrollPane" fitToWidth="true" maxWidth="500" minHeight="200" maxHeight="200">
+                                <VBox fx:id="genreCheckboxContainer" spacing="5" styleClass="dropdown-content"/>
+                            </ScrollPane>
+                        </StackPane>
+                    </VBox>
+
+
+
+                    <VBox spacing="5">
+                        <Label text="Студии" styleClass="filter-section-title"/>
+                        <Label text="Выберите интересующие студии" styleClass="filter-section-description"/>
+
+                        <StackPane fx:id="studioDropdownContainer" alignment="TOP_LEFT" maxWidth="500">
+                            <FlowPane fx:id="selectedStudiosContainer" hgap="5" vgap="5" styleClass="selected-genres-container"/>
+                            <Label fx:id="studioPlaceholder" text="Выберите студии" styleClass="placeholder-text"/>
+                        </StackPane>
+
+                        <!-- Выпадающий список -->
+                        <StackPane fx:id="studioDropdownWrapper" visible="false" managed="false" alignment="TOP_LEFT">
+                            <ScrollPane fx:id="studioScrollPane" fitToWidth="true" maxWidth="500" minHeight="200" maxHeight="200">
+                                <VBox fx:id="studioCheckboxContainer" spacing="5" styleClass="dropdown-content"/>
+                            </ScrollPane>
+                        </StackPane>
+                    </VBox>
+                </VBox>
+                <HBox fx:id="hideFilterButton"
+                      StackPane.alignment="TOP_RIGHT"
+                      styleClass="hide-filter-button"
+                      maxWidth="32" maxHeight="32"
+                      alignment="CENTER"
+                >
+                    <FontIcon iconLiteral="fas-caret-left" iconSize="32" iconColor="white"/>
+                </HBox>
+            </StackPane>
+        </ScrollPane>
+    </left>
+    <center>
+        <StackPane>
+            <ScrollPane fx:id="filterContentScroll"
+                        styleClass="transparent-scroll"
+                        hbarPolicy="NEVER"
+                        vbarPolicy="NEVER"
+                        fitToWidth="true"
+                        pannable="true"
+            >
+                <FlowPane fx:id="container" styleClass="anime-flow-pane" />
+            </ScrollPane>
+            <ProgressIndicator fx:id="loadingIndicator"
+                               visible="false"
+                               maxWidth="30"
+                               mouseTransparent="true"
+                               styleClass="loading-indicator"
+                               StackPane.alignment="BOTTOM_CENTER"
+
+            />
+            <Button fx:id="scrollToTopButton" styleClass="scroll-to-top-btn"
+                    text="↑"
+                    visible="false"
+                    StackPane.alignment="BOTTOM_RIGHT"
+            />
+            <HBox fx:id="showFilterButton"
+                  visible="false"
+                  StackPane.alignment="TOP_LEFT"
+                  styleClass="show-filter-button"
+                  maxWidth="32" maxHeight="32"
+                  alignment="CENTER"
+            >
+                <FontIcon iconLiteral="fas-filter" iconSize="20" iconColor="white"/>
+            </HBox>
+        </StackPane>
+    </center>
+
+
+
+</BorderPane>

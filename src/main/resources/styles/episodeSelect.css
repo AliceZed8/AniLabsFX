@@ -1,0 +1,62 @@
+.split-pane-divider {
+    -fx-background-color: #E0BBFF;
+    -fx-padding: 0 2 0 2;
+}
+
+
+.top-box {
+    -fx-padding: 5 10;
+}
+
+.translator-item {
+    -fx-alignment: center-left;
+    -fx-padding: 10;
+
+}
+.translator-item:hover {
+    -fx-background-color: #333333;
+    -fx-cursor: hand;
+}
+.translator-item.translator-active {
+    -fx-background-color: #333333; /* Еще светлее для активного */
+}
+
+
+.episode-item {
+    -fx-alignment: center-left;
+    -fx-padding: 10;
+}
+.episode-item:hover {
+    -fx-background-color: #333333;
+    -fx-cursor: hand;
+}
+
+.episode-watch-history-label {
+    -fx-text-fill: #999999;
+    -fx-font-size: 13px;
+}
+
+
+
+.anime-title {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.translator-label, .episode-label {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+/* Кнопка назад */
+.epselect-back-button {
+    -fx-background-color: #444444;
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+    -fx-padding: 12;
+}
+
+.epselect-back-button:hover {
+    -fx-background-color: #9b59b6;
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.CatalogController"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="NEVER"
+            stylesheets="@/styles/catalog.css"
+            >
+    <VBox spacing="20" styleClass="catalog-root">
+
+        <!-- Слайдер -->
+        <StackPane fx:id="sliderPane">
+            <ScrollPane fx:id="sliderScroll" hbarPolicy="NEVER" vbarPolicy="NEVER" fitToHeight="true" pannable="true">
+                <HBox fx:id="sliderContent" spacing="10">
+
+                </HBox>
+            </ScrollPane>
+        </StackPane>
+
+        <!-- Кнопки -->
+        <FlowPane hgap="10" vgap="10" alignment="CENTER">
+            <HBox onMouseClicked="#goToFilter" spacing="10" alignment="CENTER" styleClass="catalog-button" >
+                <FontIcon iconLiteral="fas-folder" iconSize="16" iconColor="white"/>
+                <Label text="Все аниме"/>
+            </HBox>
+            <HBox onMouseClicked="#goToFilter" spacing="10" alignment="CENTER" styleClass="catalog-button" >
+                <FontIcon iconLiteral="fas-filter" iconSize="16" iconColor="white"/>
+                <Label text="Фильтр"/>
+            </HBox>
+            <HBox onMouseClicked="#goToSchedule" spacing="10" alignment="CENTER" styleClass="catalog-button" >
+                <FontIcon iconLiteral="fas-calendar" iconSize="16" iconColor="white"/>
+                <Label text="Расписание"/>
+            </HBox>
+            <HBox onMouseClicked="#goToRandom" spacing="10" alignment="CENTER" styleClass="catalog-button" >
+                <FontIcon iconLiteral="fas-random" iconSize="16" iconColor="white"/>
+                <Label text="Случайное"/>
+            </HBox>
+        </FlowPane>
+
+        <!-- Секции -->
+        <VBox spacing="10">
+            <Label text="Недавно обновлено" styleClass="section-title" />
+            <ScrollPane vbarPolicy="NEVER" fitToHeight="true" pannable="true" prefHeight="350">
+                <HBox fx:id="lastUpdatedContainer" spacing="30"/>
+            </ScrollPane>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Онгоинги" styleClass="section-title" />
+            <ScrollPane vbarPolicy="NEVER" fitToHeight="true" pannable="true" prefHeight="310">
+                <HBox fx:id="ongoingContainer" spacing="30"/>
+            </ScrollPane>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Фильмы" styleClass="section-title" />
+            <ScrollPane vbarPolicy="NEVER" fitToHeight="true" pannable="true" prefHeight="310">
+                <HBox fx:id="moviesContainer" spacing="30"/>
+            </ScrollPane>
+        </VBox>
+    </VBox>
+</ScrollPane>

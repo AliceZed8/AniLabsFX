@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.shape.Circle?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controller.LoadingSceneController"
+           stylesheets="@/styles/loading.css"
+>
+    <VBox StackPane.alignment="CENTER" alignment="CENTER" spacing="20">
+        <ImageView fx:id="logoImage">
+            <Image url="@/app-logo.jpg" />
+        </ImageView>
+
+        <Label text="AniLabsFX" styleClass="app-title"/>
+
+        <VBox alignment="CENTER" spacing="10">
+            <ProgressIndicator maxWidth="40"
+                               maxHeight="40"
+                               style="-fx-progress-color: purple;"
+
+            />
+            <Label fx:id="statusLabel" styleClass="status-label"/>
+        </VBox>
+
+
+    </VBox>
+
+
+</StackPane>

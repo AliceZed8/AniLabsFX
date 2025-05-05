@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="controller.AnimeDetailController"
+           stylesheets="@/styles/animeDetail.css"
+           alignment="TOP_LEFT"
+           fx:id="mainPane"
+>
+    <ScrollPane fx:id="detailScroll"
+                fitToWidth="true"
+                hbarPolicy="NEVER"
+                vbarPolicy="NEVER"
+                pannable="true"
+    >
+        <VBox spacing="20" styleClass="anime-details-container">
+            <!-- Блок с инфой. FlowPane никак не ворк :< поэтому адаптируем сами.... -->
+            <VBox>
+                <!-- Горизонтальная версия -->
+                <HBox fx:id="infoBlockHorizontal" styleClass="anime-info-block" spacing="30" visible="true" managed="true">
+                    <VBox>
+                        <ImageView fx:id="animePosterImage" styleClass="anime-poster" preserveRatio="true" cache="true"/>
+                    </VBox>
+                    <VBox fx:id="infoBoxHorizontal" spacing="20" styleClass="anime-info-box">
+                        <VBox>
+                            <Label fx:id="animeTitle" wrapText="true" styleClass="anime-title"/>
+                            <Label fx:id="animeOrigTitle" wrapText="true" styleClass="anime-orig-title"/>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <HBox spacing="5">
+                                <FontIcon iconLiteral="fas-info-circle" iconSize="20" iconColor="white"/>
+                                <HBox>
+                                    <Label fx:id="animeType" styleClass="anime-info-link"/>
+                                    <Label fx:id="animeSeason" styleClass="anime-info-normal"/>
+                                </HBox>
+                            </HBox>
+                            <HBox fx:id="animeEpisodesBox" spacing="5">
+                                <FontIcon iconLiteral="fas-th-list" iconSize="20" iconColor="white"/>
+                                <Label fx:id="animeEpisodesInfo" wrapText="true" styleClass="anime-episodes-info"/>
+                            </HBox>
+                            <HBox fx:id="animeOngoingBox" spacing="5" visible="false" managed="false">
+                                <FontIcon iconLiteral="far-calendar-alt" iconSize="20" iconColor="white"/>
+                                <HBox>
+                                    <Label text="Онгоинг" styleClass="anime-info-link"/>
+                                    <Label fx:id="animeOngoingDay" styleClass="anime-info-normal"/>
+                                </HBox>
+                            </HBox>
+
+                            <HBox fx:id="animeStudiosBox" spacing="5">
+                                <FontIcon iconLiteral="fas-users" iconSize="14" iconColor="white"/>
+                                <HBox>
+                                    <Label minWidth="-Infinity" text="Студия: " styleClass="anime-info-normal"/>
+                                    <FlowPane fx:id="animeStudios"
+                                              hgap="5" vgap="5"
+                                    >
+                                    </FlowPane>
+                                </HBox>
+                            </HBox>
+                            <HBox fx:id="animeGenresBox" spacing="5" visible="true" managed="true">
+                                <FontIcon iconLiteral="fas-book" iconSize="20" iconColor="white"/>
+                                <HBox>
+                                    <Label minWidth="-Infinity" text="Жанр: " styleClass="anime-info-normal"/>
+                                    <FlowPane fx:id="animeGenres"
+                                              hgap="5" vgap="5"
+                                    >
+                                    </FlowPane>
+                                </HBox>
+
+                            </HBox>
+
+                        </VBox>
+                        <Button fx:id="watchButton" styleClass="watch-button">
+                            <graphic>
+                                <HBox spacing="5" alignment="CENTER">
+                                    <FontIcon iconLiteral="fas-play" iconSize="16" iconColor="black"/>
+                                    <Label text="Смотреть" styleClass="anime-info-watch"/>
+                                </HBox>
+                            </graphic>
+                        </Button>
+                    </VBox>
+                </HBox>
+
+                <!-- Вертикальная версия -->
+                <VBox fx:id="infoBlockVertical" styleClass="anime-info-block" spacing="30" visible="false" managed="false">
+                    <VBox alignment="TOP_CENTER">
+                        <ImageView fx:id="animePosterImageVertical" styleClass="anime-poster" preserveRatio="true" cache="true"/>
+                    </VBox>
+                    <VBox fx:id="infoBoxVertical"  spacing="20" styleClass="anime-info-box">
+                        <VBox>
+                            <Label fx:id="animeTitleVertical" wrapText="true" styleClass="anime-title"/>
+                            <Label fx:id="animeOrigTitleVertical" wrapText="true" styleClass="anime-orig-title"/>
+                        </VBox>
+
+                        <VBox spacing="5">
+                            <HBox spacing="5">
+                                <FontIcon iconLiteral="fas-info-circle" iconSize="20" iconColor="white"/>
+                                <HBox>
+                                    <Label fx:id="animeTypeVertical" styleClass="anime-info-link"/>
+                                    <Label fx:id="animeSeasonVertical" styleClass="anime-info-normal"/>
+                                </HBox>
+                            </HBox>
+                            <HBox fx:id="animeEpisodesBoxVertical" spacing="5">
+                                <FontIcon iconLiteral="fas-th-list" iconSize="20" iconColor="white"/>
+                                <Label fx:id="animeEpisodesInfoVertical" wrapText="true" styleClass="anime-episodes-info"/>
+                            </HBox>
+                            <HBox fx:id="animeOngoingBoxVertical" spacing="5" visible="false" managed="false">
+                                <FontIcon iconLiteral="far-calendar-alt" iconSize="20" iconColor="white"/>
+                                <HBox>
+                                    <Label text="Онгоинг" styleClass="anime-info-link"/>
+                                    <Label fx:id="animeOngoingDayVertical" styleClass="anime-info-normal"/>
+                                </HBox>
+                            </HBox>
+
+                            <HBox fx:id="animeStudiosBoxVertical" spacing="5">
+                                <FontIcon iconLiteral="fas-users" iconSize="14" iconColor="white"/>
+                                <HBox>
+                                    <Label minWidth="-Infinity" text="Студия: " styleClass="anime-info-normal"/>
+                                    <FlowPane fx:id="animeStudiosVertical"
+                                              hgap="5" vgap="5"
+                                    >
+                                    </FlowPane>
+                                </HBox>
+                            </HBox>
+                            <HBox fx:id="animeGenresBoxVertical" spacing="5" visible="true" managed="true">
+                                <FontIcon iconLiteral="fas-book" iconSize="20" iconColor="white"/>
+                                <HBox>
+                                    <Label minWidth="-Infinity" text="Жанр: " styleClass="anime-info-normal"/>
+                                    <FlowPane fx:id="animeGenresVertical"
+                                              hgap="5" vgap="5"
+                                    >
+                                    </FlowPane>
+                                </HBox>
+
+                            </HBox>
+                        </VBox>
+                        <Button fx:id="watchButtonVertical" styleClass="watch-button">
+                            <graphic>
+                                <HBox spacing="5" alignment="CENTER">
+                                    <FontIcon iconLiteral="fas-play" iconSize="16" iconColor="black"/>
+                                    <Label text="Смотреть" styleClass="anime-info-watch"/>
+                                </HBox>
+                            </graphic>
+                        </Button>
+                    </VBox>
+
+                </VBox>
+            </VBox>
+
+
+            <Label text="Описание" styleClass="section-header"/>
+            <Label fx:id="animeDescription" wrapText="true" styleClass="anime-description"/>
+
+            <Label text="Кадры" styleClass="section-header"/>
+            <ScrollPane minHeight="220" vbarPolicy="NEVER" pannable="true">
+                <HBox  fx:id="screenshotsContainer"
+                       alignment="CENTER_LEFT"
+                       spacing="20"
+                />
+            </ScrollPane>
+
+
+        </VBox>
+
+    </ScrollPane>
+    <HBox spacing="10" StackPane.alignment="TOP_LEFT" pickOnBounds="false">
+        <HBox onMouseClicked="#goBack" styleClass="back-button" maxWidth="32" maxHeight="32" alignment="CENTER">
+            <FontIcon iconLiteral="fas-arrow-left" iconSize="16" iconColor="white"/>
+        </HBox>
+        <HBox fx:id="goToRandomButton" onMouseClicked="#goToRandom" visible="false" styleClass="back-button" maxWidth="32" maxHeight="32" alignment="CENTER">
+            <FontIcon iconLiteral="fas-random" iconSize="16" iconColor="white"/>
+        </HBox>
+    </HBox>
+
+</StackPane>

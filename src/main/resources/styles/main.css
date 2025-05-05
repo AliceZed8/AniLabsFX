@@ -1,0 +1,162 @@
+/* Основные стили */
+.root {
+    -fx-base: #1a1a1a;
+    -fx-background: #1a1a1a;
+}
+
+/* Индикатор */
+.loading-indicator {
+    -fx-progress-color: #9b59b6;
+}
+
+
+
+
+/* скролл */
+.scroll-pane {
+    -fx-background-color: transparent; /* убираем фон */
+    -fx-border-color: transparent; /* убираем границу */
+    -fx-focus-color: transparent; /* убираем синее выделение */
+    -fx-faint-focus-color: transparent; /* убираем слабое синее выделение */
+}
+
+/* скроллбар */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: #1e1e1e; /* тёмный фон */
+    -fx-padding: 0;
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+}
+
+/* Трек */
+.scroll-bar .track {
+    -fx-background-color: #2c2c2c;
+    -fx-background-radius: 5px;
+}
+
+/* Ползунок */
+.scroll-bar .thumb {
+    -fx-background-color: #a855f7; /* фиолетовый */
+    -fx-background-radius: 5px;
+}
+
+/* Удаляем стрелочки */
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-shape: "";
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* контейнер для аниме */
+.anime-flow-pane {
+    -fx-hgap: 15px;
+    -fx-vgap: 15px;
+    -fx-alignment: CENTER;
+}
+
+
+/* тайл */
+.anime-tile {
+    -fx-background-color: #1f1f1f;
+    -fx-background-radius: 16;
+    -fx-padding: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+}
+
+.anime-tile:hover {
+    -fx-background-color: #2a2a2a;
+}
+
+
+/* вертикальный тайл */
+.anime-v-tile {
+    -fx-cursor: hand;
+}
+
+
+
+
+
+
+
+
+/* Стили для нижней панели */
+.bottom-nav {
+    -fx-background-color: #2b2b2b;
+    -fx-spacing: 30px;
+}
+
+.nav-button {
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+}
+
+.nav-button:hover {
+    -fx-opacity: 0.8;
+}
+
+.nav-label {
+    -fx-text-fill: #aaaaaa; /* Цвет текста для НЕ активных */
+    -fx-font-size: 11px;
+}
+
+.nav-icon {
+    -fx-fill: #777777; /* Цвет иконок для НЕ активных */
+}
+
+/* Активная вкладка */
+.nav-button.active .nav-label {
+    -fx-text-fill: #C8A2C8; /* Белый текст */
+}
+
+.nav-button.active .nav-icon {
+    -fx-fill: #C8A2C8; /* Белая иконка */
+}
+
+
+
+
+
+
+
+
+/* Кнопка наверх */
+.scroll-to-top-btn {
+    -fx-background-radius: 32;
+    -fx-background-color: #444444;
+    -fx-font-size: 20px;
+
+    -fx-translate-x: -20;
+    -fx-translate-y: -20;
+}
+.scroll-to-top-btn:hover {
+    -fx-background-color: #888888;
+    -fx-cursor: hand;
+}
+
+/* Кнопка назад */
+.back-button {
+    -fx-background-color: #444444;
+    -fx-background-radius: 16;
+    -fx-cursor: hand;
+    -fx-translate-x: 20;
+    -fx-translate-y: 20;
+    -fx-padding: 12;
+}
+
+.back-button:hover {
+    -fx-background-color: #9b59b6;
+}
+

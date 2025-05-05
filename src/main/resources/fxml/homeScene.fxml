@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Rectangle?>
+<StackPane xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="controller.HomeSceneController"
+           stylesheets="@/styles/home.css"
+           alignment="TOP_LEFT"
+>
+    <StackPane fx:id="tabContentContainer" />
+
+    <!-- Категории -->
+    <StackPane fx:id="headerContainer"
+               prefHeight="40"
+               maxHeight="40"
+    >
+        <HBox fx:id="tabHeader"
+              spacing="20"
+              styleClass="tab-header"
+              alignment="CENTER_LEFT"
+        />
+
+
+        <!-- Индикатор -->
+        <Rectangle fx:id="tabIndicator"
+                   height="4"
+                   styleClass="tab-indicator"
+                   mouseTransparent="true"
+                   StackPane.alignment="BOTTOM_LEFT"
+        />
+    </StackPane>
+</StackPane>

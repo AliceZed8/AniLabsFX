@@ -37,10 +37,13 @@ javafx {
 }
 
 application {
-    mainClass = 'Main' // укажи свой главный класс
+    mainClass = 'Main'
 }
 
 shadowJar {
     archiveFileName = 'AniLabsFX.jar'
     mergeServiceFiles()
+    manifest {
+        attributes 'Main-Class' : 'Main'
+    }
 }

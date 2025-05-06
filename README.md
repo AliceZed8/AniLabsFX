@@ -6,8 +6,7 @@ AniLabsFX — это приложение для поиска и просмот�
 ### GStreamer
 Используется для проигрывания MP4 HLS.
 #### Windows
-- Скачать можно [здесь](https://gstreamer.freedesktop.org/download/#linux)
-- Также установщик есть в папке **/gstreamer/win/**
+Скачать можно [здесь](https://gstreamer.freedesktop.org/download/#linux)
 #### Linux
 ##### Arch
 ```

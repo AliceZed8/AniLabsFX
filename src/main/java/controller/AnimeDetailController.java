@@ -3,8 +3,6 @@ package controller;
 import animation.Animations;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -23,14 +21,12 @@ import model.*;
 import service.ApiService;
 import utils.AnimeUtils;
 
-import java.util.Map;
-
 public class AnimeDetailController {
     private final ApiService apiService = ApiService.getInstance();
 
 
 
-    private final Integer POSTER_WIDTH = 300;
+    private final Integer POSTER_WIDTH = 350;
     private final Integer SCREENSHOT_HEIGHT = 200;
 
     @FXML private StackPane mainPane;
@@ -98,6 +94,8 @@ public class AnimeDetailController {
         infoBlockVertical.managedProperty().bind(infoBlockHorizontal.managedProperty().not());
 
         animePosterImageVertical.fitWidthProperty().bind(animePosterImage.fitWidthProperty());
+        animePosterImageVertical.smoothProperty().bind(animePosterImage.smoothProperty());
+        animePosterImageVertical.cacheProperty().bind(animePosterImage.cacheProperty());
         animePosterImageVertical.preserveRatioProperty().bind(animePosterImage.preserveRatioProperty());
         animePosterImageVertical.imageProperty().bind(animePosterImage.imageProperty());
 
@@ -159,6 +157,8 @@ public class AnimeDetailController {
         // постер
         {
             animePosterImage.setFitWidth(POSTER_WIDTH);
+            animePosterImage.setCache(true);
+            animePosterImage.setSmooth(true);
             animePosterImage.setPreserveRatio(true);
 
 
@@ -355,7 +355,7 @@ public class AnimeDetailController {
             if (previous != null && current != null) {
                 // анимируем
                 TabSceneManager.showCombined(previous.getNode(), current.getNode());
-                Animations.FadeInSlideVertical(current.getNode(), 500, 0, Duration.millis(300), Duration.ZERO)
+                Animations.FadeInSlideVertical(current.getNode(), 500, 0, Duration.millis(400), Duration.ZERO)
                         .setOnFinished(ee -> TabSceneManager.show());
             }
         });

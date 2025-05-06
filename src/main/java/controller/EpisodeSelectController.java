@@ -5,7 +5,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -18,8 +17,6 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.SVGPath;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import manager.SceneState;
@@ -215,6 +212,15 @@ public class EpisodeSelectController {
     }
 
     public void goBack() {
-        TabSceneManager.goBackAndShowAnimated();
+        SceneState current = TabSceneManager.get();
+        TabSceneManager.goBack();
+        SceneState previous = TabSceneManager.get();
+
+        if (current == null || previous == null) return;
+
+        // анимируем
+        TabSceneManager.showCombined(previous.getNode(), current.getNode());
+        Animations.FadeOutSlideVertical(current.getNode(), 0, 500, Duration.millis(400), Duration.ZERO)
+                .setOnFinished(e -> TabSceneManager.show());
     }
 }

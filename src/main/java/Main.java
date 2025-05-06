@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
-import controller.MainController;
 import org.freedesktop.gstreamer.Gst;
 
 

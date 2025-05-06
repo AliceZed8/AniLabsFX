@@ -5,7 +5,6 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.util.Duration;
 import manager.SceneState;
 import manager.TabSceneManager;

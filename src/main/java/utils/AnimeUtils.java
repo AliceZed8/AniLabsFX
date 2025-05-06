@@ -146,17 +146,17 @@ public class AnimeUtils {
     static public HBox createAnimeTile(Anime anime) {
         HBox tile = new HBox(10);
         tile.getStyleClass().add("anime-tile");
-        tile.setPrefWidth(500);
+        tile.setPrefWidth(600);
 
 
         // Постер
         ImageView poster = new ImageView();
         poster.setPreserveRatio(true);
-        poster.setFitWidth(150);
+        poster.setFitWidth(200);
         poster.setCache(true);
-        poster.setSmooth(true);
+        //poster.setSmooth(true);
 
-        Image image = new Image(anime.getPosterUrl(), true);
+        Image image = new Image(anime.getPosterUrl(), 200, 0, true, true, true);
         poster.setImage(image);
 
         image.progressProperty().addListener((obs, oldVal, newVal) -> {
@@ -244,8 +244,8 @@ public class AnimeUtils {
 
         // Постер
         ImageView poster = new ImageView();
+        poster.setFitWidth(160);
         poster.setPreserveRatio(true);
-        poster.setFitWidth(150);
         poster.setCache(true);
         poster.setSmooth(true);
 

@@ -1,15 +1,9 @@
 package controller;
 
-
-import animation.Animations;
-import javafx.animation.ParallelTransition;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
 import manager.SceneState;
 import manager.TabSceneManager;
-import model.Anime;
 
 import java.util.List;
 

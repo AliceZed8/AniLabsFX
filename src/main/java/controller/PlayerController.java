@@ -20,14 +20,11 @@ import org.freedesktop.gstreamer.Caps;
 import org.freedesktop.gstreamer.FlowReturn;
 import org.freedesktop.gstreamer.Sample;
 import org.freedesktop.gstreamer.Structure;
-
 import org.freedesktop.gstreamer.event.SeekFlags;
 import service.ApiService;
-
 import org.freedesktop.gstreamer.*;
 import service.DbService;
 import utils.AnimeUtils;
-
 import java.net.URI;
 import java.nio.ByteBuffer;
 import java.util.EnumSet;
@@ -318,7 +315,7 @@ public class PlayerController {
 
                         // ссылка на манифест
                         String manifestUrl = cloudPath + (quality + ".mp4") + ":hls:manifest.m3u8";
-
+                        //System.out.println("Manifest url " + manifestUrl);
 
                         // настройка GStreamer
                         playBin = new PlayBin("play_bin");

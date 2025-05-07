@@ -5,8 +5,8 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.EpisodeSelectController"
-            stylesheets="@/styles/episodeSelect.css"
+            fx:controller="com.anilabs.anilabsfx.controller.EpisodeSelectController"
+            stylesheets="@../styles/episodeSelect.css"
             >
     <top>
         <HBox alignment="CENTER_LEFT" spacing="10" styleClass="top-box">

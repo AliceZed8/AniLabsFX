@@ -9,8 +9,8 @@
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.ScheduleController"
-            stylesheets="@/styles/schedule.css"
+            fx:controller="com.anilabs.anilabsfx.controller.ScheduleController"
+            stylesheets="@../styles/schedule.css"
 >
     <top>
         <HBox spacing="10" alignment="CENTER_LEFT">

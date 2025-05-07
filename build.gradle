@@ -2,6 +2,7 @@ plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.beryx.jlink' version '3.1.1'
 }
 
 
@@ -29,6 +30,8 @@ dependencies {
     implementation 'org.xerial:sqlite-jdbc:3.44.1.0'
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'org.slf4j:slf4j-simple:1.7.32'
+
+
 }
 
 javafx {
@@ -37,13 +40,38 @@ javafx {
 }
 
 application {
-    mainClass = 'Main'
+    mainModule = 'com.anilabs.anilabsfx'
+    mainClass = 'com.anilabs.anilabsfx.Main'
 }
 
-shadowJar {
-    archiveFileName = 'AniLabsFX.jar'
-    mergeServiceFiles()
-    manifest {
-        attributes 'Main-Class' : 'Main'
+
+jlink {
+    addExtraDependencies("javafx")
+
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+
+    launcher {
+        name = 'AniLabsFX'
+        jvmArgs = [
+                '-Djava.library.path=$APPDIR\\gstreamer\\win\\bin'
+        ]
+    }
+
+    jpackage {
+        installerType = 'exe'
+        installerOptions = [
+                '--win-menu',                          // Добавить в меню "Пуск"
+                '--win-shortcut',                      // Создать ярлык на рабочем столе
+                '--win-dir-chooser',                   // Позволить выбрать папку установки
+                '--win-per-user-install',              // Установка для текущего пользователя
+                '--vendor', 'AniLabs',                 // Имя разработчика
+                '--app-version', '0.0.1'               // Версия приложения
+        ]
+
+        resourceDir = file('gstreamer/win')
+
+        imageName = 'AniLabsFX'
+        installerName = 'AniLabsFX-Installer'
     }
 }
+

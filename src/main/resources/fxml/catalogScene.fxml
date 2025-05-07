@@ -10,11 +10,11 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <ScrollPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.CatalogController"
+            fx:controller="com.anilabs.anilabsfx.controller.CatalogController"
             fitToWidth="true"
             hbarPolicy="NEVER"
             vbarPolicy="NEVER"
-            stylesheets="@/styles/catalog.css"
+            stylesheets="@../styles/catalog.css"
             >
     <VBox spacing="20" styleClass="catalog-root">
 

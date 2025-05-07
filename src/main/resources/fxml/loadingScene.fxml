@@ -11,8 +11,8 @@
 <?import javafx.scene.shape.Circle?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="controller.LoadingSceneController"
-           stylesheets="@/styles/loading.css"
+           fx:controller="com.anilabs.anilabsfx.controller.LoadingSceneController"
+           stylesheets="@../styles/loading.css"
 >
     <VBox StackPane.alignment="CENTER" alignment="CENTER" spacing="20">
         <ImageView fx:id="logoImage">

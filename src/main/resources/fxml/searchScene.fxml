@@ -9,9 +9,9 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="controller.SearchController"
+           fx:controller="com.anilabs.anilabsfx.controller.SearchController"
            fx:id="mainPane"
-           stylesheets="@/styles/search.css"
+           stylesheets="@../styles/search.css"
 >
     <StackPane>
         <ScrollPane fx:id="searchScroll"

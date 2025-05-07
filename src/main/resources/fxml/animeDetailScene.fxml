@@ -9,8 +9,8 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
-           fx:controller="controller.AnimeDetailController"
-           stylesheets="@/styles/animeDetail.css"
+           fx:controller="com.anilabs.anilabsfx.controller.AnimeDetailController"
+           stylesheets="@../styles/animeDetail.css"
            alignment="TOP_LEFT"
            fx:id="mainPane"
 >

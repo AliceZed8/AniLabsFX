@@ -8,30 +8,21 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import org.freedesktop.gstreamer.Gst;
 
-import javax.net.ssl.SSLContext;
 import java.io.File;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Main extends Application {
 
     public static void main(String[] args) {
         System.out.println("Init GStreamer");
-        setupGStreamerPaths();
         Gst.init("AniLabsFX"); // gstreamer
         System.out.println("Launch");
         launch(args);
     }
 
-    private static void setupGStreamerPaths() {
-        String appDir = System.getProperty("user.dir");
-        String gstreamerPath = appDir + "/gstreamer/win";
-
-        // Добавляем GStreamer bin в PATH
-        String path = System.getenv("PATH");
-        path = gstreamerPath + "/bin" + File.pathSeparator + path;
-        System.setProperty("jna.library.path", gstreamerPath + "/bin");
-        System.setProperty("java.library.path", gstreamerPath + "/bin");
-    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {

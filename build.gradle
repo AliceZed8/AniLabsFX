@@ -46,6 +46,7 @@ application {
 
 
 jlink {
+    imageName = "AniLabsFX"
     addExtraDependencies("javafx")
 
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
@@ -55,23 +56,6 @@ jlink {
         jvmArgs = [
                 '-Djava.library.path=$APPDIR\\gstreamer\\win\\bin'
         ]
-    }
-
-    jpackage {
-        installerType = 'exe'
-        installerOptions = [
-                '--win-menu',                          // Добавить в меню "Пуск"
-                '--win-shortcut',                      // Создать ярлык на рабочем столе
-                '--win-dir-chooser',                   // Позволить выбрать папку установки
-                '--win-per-user-install',              // Установка для текущего пользователя
-                '--vendor', 'AniLabs',                 // Имя разработчика
-                '--app-version', '0.0.1'               // Версия приложения
-        ]
-
-        resourceDir = file('gstreamer/win')
-
-        imageName = 'AniLabsFX'
-        installerName = 'AniLabsFX-Installer'
     }
 }
 

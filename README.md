@@ -2,6 +2,14 @@
 AniLabsFX — это приложение для поиска и просмотра аниме, использующее API AniLabs. 
 Написано с использованием библиотеки JavaFX.
 
+## Скриншоты
+<div>
+    <img src="ui_screenshots/1.jpg" width=400>
+    <img src="ui_screenshots/2.jpg" width=400>
+    <img src="ui_screenshots/3.jpg" width=400>
+    <img src="ui_screenshots/4.jpg" width=400>
+</div>
+
 ## Требования
 ### GStreamer
 Используется для проигрывания MP4 HLS.
